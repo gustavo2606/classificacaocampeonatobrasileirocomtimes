@@ -1,0 +1,68 @@
+ Dictionary<int, string> times = new Dictionary<int, string>
+  {
+      {1, "Botafogo" },
+      {2, "Palmeiras" },
+      {3, "Fortaleza" },
+      {4, "Flamengo" },
+      {5, "Internacional" },
+      {6, "São Paulo" },
+      {7, "Cruzeiro" },
+      {8, "Bahia" },
+      {9, "Vasco da Gama" },
+      {10, "Atletico - MG" },
+      {11, "Corinthians" },
+      {12, "Gremio" },
+      {13, "Vitoria" },
+      {14, "Atletico - PR" },
+      {15, "Fluminense" },
+      {16, "Criciuma" },
+      {17, "Juventude" },
+      {18, "Bragantino" },
+      {19, "Cuiaba"},
+      {20, "Atletico - GO"},
+
+  };
+
+  bool entradaValida = false;
+  int posicao;
+
+
+  do
+  {
+      Console.WriteLine("\n Insira a posição do time  :");
+      string entrada = Console.ReadLine();
+
+      if (int.TryParse(entrada, out posicao) && posicao >= 1 && posicao <= 20)
+      {
+          entradaValida = true;
+      }
+      else
+      {
+          Console.WriteLine("ERRO : Por favor, digite números !");
+      }
+  } while (!entradaValida);
+  string nomeTime = times[posicao];
+  Console.WriteLine($"\n Time : {nomeTime}");
+  if (posicao <= 4)
+  {
+      Console.WriteLine("O time está na Copa Libertadores .");
+  }
+  else if (posicao <= 6)
+  {
+      Console.WriteLine("O time está na Pre- Libetadores. ");
+  }
+  else if (posicao <= 12)
+  {
+      Console.WriteLine("O tima está na Copa-Sul America .");
+  }
+
+
+  else
+  {
+      Console.WriteLine("Seu time está rebaixado para serie B .");
+
+  }
+  Console.WriteLine("\nPrograma finalizado");
+
+  Console.ReadKey();
+  
